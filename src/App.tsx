@@ -1,14 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import TopScreen from './screens/TopScreen'
+import Header from './parts/Header'
+
 function App() {
   return (
     <div className="container mx-auto sm:px-0 px-4">
-      <header className="py-4">
-        <span className="text-4xl font-light text-accent">React Todo</span>
-      </header>
+      <Header />
 
-      <main>
-        <h1 className="text-2xl font-bold">Todos</h1>
-        <p className="mt-2 text-secondary">Todoがありません</p>
-      </main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<TopScreen />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
