@@ -1,9 +1,5 @@
 import { NavLink } from 'react-router-dom'
-
-type Todo = {
-  id: string
-  content: string
-}
+import Todo from '../types/Todo'
 
 const DUMMY_TODOS: Todo[] = [
   {
