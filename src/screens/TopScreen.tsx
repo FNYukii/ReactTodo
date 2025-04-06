@@ -32,7 +32,7 @@ function TopScreen() {
 
         <NavLink
           to="/new"
-          className="text-accent   -mr-4 rounded-full px-4 py-1 hover:bg-button-hover transition"
+          className="px-12 py-2   text-accent border border-accent   hover:bg-button-hover transition"
         >
           新規Todo
         </NavLink>
