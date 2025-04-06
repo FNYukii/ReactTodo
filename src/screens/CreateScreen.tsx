@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { createTodo } from '../utils/todo'
 
 const SAMPLE_TODOS = [
   '買い物',
@@ -14,13 +15,22 @@ const SAMPLE_TODOS = [
   '新しい趣味を見つける',
 ]
 
+const generateSampleContent = (): string => {
+  const rand = Math.floor(Math.random() * SAMPLE_TODOS.length)
+  return SAMPLE_TODOS[rand]
+}
+
 function CreateScreen() {
   document.title = 'Todoの作成 | React Todo'
 
+  const navigate = useNavigate()
+
   const [content, setContent] = useState('')
 
-  const rand = Math.floor(Math.random() * SAMPLE_TODOS.length)
-  const sampleTodo = SAMPLE_TODOS[rand]
+  const handleCreate = () => {
+    createTodo(content)
+    navigate('/')
+  }
 
   return (
     <main>
@@ -32,7 +42,8 @@ function CreateScreen() {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         rows={4}
-        placeholder={sampleTodo}
+        autoFocus
+        placeholder={generateSampleContent()}
         className="mt-6 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
@@ -41,7 +52,11 @@ function CreateScreen() {
           戻る
         </NavLink>
 
-        <button disabled={content.length === 0} className="filled-button">
+        <button
+          onClick={handleCreate}
+          disabled={content.length === 0}
+          className="filled-button"
+        >
           作成
         </button>
       </div>

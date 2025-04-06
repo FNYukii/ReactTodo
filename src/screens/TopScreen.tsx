@@ -1,29 +1,10 @@
 import { NavLink } from 'react-router-dom'
-import Todo from '../types/Todo'
-
-const DUMMY_TODOS: Todo[] = [
-  {
-    id: 'aaa',
-    content: 'お花見に行く',
-  },
-  {
-    id: 'bbb',
-    content: 'Reactの公式チュートリアルに挑戦',
-  },
-  {
-    id: 'ccc',
-    content: '買い物\n・洗剤\n・パスタ',
-  },
-  {
-    id: 'ddd',
-    content: '試験勉強の計画を立てる',
-  },
-]
+import { readTodos } from '../utils/todo'
 
 function TopScreen() {
   document.title = 'React Todo'
 
-  const todos = DUMMY_TODOS
+  const todos = readTodos()
 
   return (
     <main>
