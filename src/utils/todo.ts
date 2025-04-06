@@ -22,15 +22,25 @@ const setTodos = (todos: Todo[]) => {
 
 /**
  * Todosを読み取り
- * @returns Todoの配列
+ * @returns
  */
 export const readTodos = (): Todo[] => {
   return getTodos()
 }
 
 /**
+ * 指定したTodoを読み取り
+ * @returns
+ */
+export const readTodo = (id: string): Todo | null => {
+  const todos = getTodos()
+  const filterdTodo = todos.find((todo) => todo.id === id)
+  return filterdTodo ?? null
+}
+
+/**
  * 新規Todoを追加
- * @param content 追加したいTodoのcontent
+ * @param content
  */
 export const createTodo = (content: string) => {
   const newTodo: Todo = {
@@ -42,10 +52,24 @@ export const createTodo = (content: string) => {
   setTodos([...currentTodos, newTodo])
 }
 
+/**
+ * 既存Todoのcontentを更新
+ * @param id
+ * @param content
+ */
 export const updateTodo = (id: string, content: string) => {
-  // TODO: LocalStorageのTodoを更新
+  const todos = getTodos()
+  const index = todos.findIndex((todo) => todo.id === id)
+  todos[index].content = content
+  setTodos(todos)
 }
 
+/**
+ * 既存Todoを削除
+ * @param id
+ */
 export const deleteTodo = (id: string) => {
-  // TODO: LocalStorageのTodoを削除
+  const todos = getTodos()
+  const filterdTodos = todos.filter((todo) => todo.id !== id)
+  setTodos(filterdTodos)
 }

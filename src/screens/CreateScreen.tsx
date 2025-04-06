@@ -1,24 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { createTodo } from '../utils/todo'
-
-const SAMPLE_TODOS = [
-  '買い物',
-  '洗濯',
-  '部屋を掃除する',
-  '新しい家具を探す',
-  'なぜ空は青いのか調べる',
-  'ペットと遊ぶ',
-  '推しのために何ができるか考える',
-  '友人の家を訪ねる',
-  '旅行の計画を立てる',
-  '新しい趣味を見つける',
-]
-
-const generateSampleContent = (): string => {
-  const rand = Math.floor(Math.random() * SAMPLE_TODOS.length)
-  return SAMPLE_TODOS[rand]
-}
+import { generateSampleContent } from '../utils/form'
 
 function CreateScreen() {
   document.title = 'Todoの作成 | React Todo'
@@ -41,9 +24,8 @@ function CreateScreen() {
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        rows={4}
-        autoFocus
         placeholder={generateSampleContent()}
+        autoFocus
         className="mt-6 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
