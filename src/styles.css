@@ -2,7 +2,11 @@
 
 @theme {
   --color-wall: #030712;
+
   --color-primary: #fff;
   --color-secondary: #6b7280;
   --color-accent: #0ea5e9;
+
+  --color-frame: #4b5563;
+  --color-translucent: #111827;
 }

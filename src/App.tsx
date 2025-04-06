@@ -5,9 +5,8 @@ import Header from './parts/Header'
 function App() {
   return (
     <div className="container mx-auto sm:px-0 px-4">
-      <Header />
-
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<TopScreen />} />
         </Routes>
