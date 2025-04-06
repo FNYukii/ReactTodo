@@ -42,7 +42,10 @@ function CreateScreen() {
           戻る
         </NavLink>
 
-        <button className="px-16 py-3   text-wall bg-accent   hover:bg-switch-hover transition   cursor-pointer">
+        <button
+          disabled={content.length === 0}
+          className="px-16 py-3   text-wall bg-accent disabled:bg-switch-hover   hover:bg-switch-hover transition   not-disabled:cursor-pointer"
+        >
           作成
         </button>
       </div>
