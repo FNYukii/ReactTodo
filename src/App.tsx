@@ -1,7 +1,14 @@
 function App() {
   return (
-    <div>
-      <h1>React Todo</h1>
+    <div className="container mx-auto sm:px-0 px-4">
+      <header className="py-4">
+        <span className="text-4xl">React Todo</span>
+      </header>
+
+      <main>
+        <h1 className="text-2xl font-bold">Todos</h1>
+        <p className="mt-2">Todoがありません</p>
+      </main>
     </div>
   )
 }
