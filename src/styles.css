@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-wall: #030712;
+  --color-wall: var(--color-gray-950);
 
-  --color-primary: #fff;
-  --color-secondary: #6b7280;
-  --color-accent: #0ea5e9;
+  --color-primary: var(--color-white);
+  --color-secondary: var(--color-gray-500);
+  --color-accent: var(--color-sky-500);
 
-  --color-frame: #4b5563;
-  --color-translucent: #111827;
+  --color-frame: var(--color-gray-700);
+  --color-translucent: var(--color-gray-900);
 }
