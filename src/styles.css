@@ -12,3 +12,11 @@
   --color-button-hover: var(--color-sky-950);
   --color-switch-hover: var(--color-sky-700);
 }
+
+.outlined-button {
+  @apply min-w-40 px-8 py-2 text-center   text-accent border border-accent   hover:bg-button-hover transition   cursor-pointer;
+}
+
+.filled-button {
+  @apply min-w-40 px-8 py-2 text-center   text-wall bg-accent    hover:bg-switch-hover transition   not-disabled:cursor-pointer disabled:bg-switch-hover;
+}

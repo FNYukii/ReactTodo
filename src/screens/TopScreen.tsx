@@ -27,34 +27,33 @@ function TopScreen() {
 
   return (
     <main>
-      <div className="mt-4   flex justify-between">
-        <h1 className="text-2xl font-bold">Todos</h1>
+      <div className="mt-4   flex justify-between items-center">
+        <h1 className="py-2   text-2xl font-bold">Todos</h1>
 
-        <NavLink
-          to="/new"
-          className="px-12 py-2   text-accent border border-accent   hover:bg-button-hover transition"
-        >
+        <NavLink to="/new" className="outlined-button">
           新規Todo
         </NavLink>
       </div>
 
-      {todos.length === 0 && (
-        <p className="mt-4 text-secondary">Todoがありません</p>
-      )}
+      <div className="mt-6">
+        {todos.length === 0 && (
+          <p className="text-secondary">Todoがありません</p>
+        )}
 
-      {todos.length !== 0 && (
-        <div className="mt-4   grid grid-cols-3 gap-8">
-          {todos.map((todo, index) => (
-            <NavLink
-              key={index}
-              to={`/todos/${todo.id}`}
-              className="p-4 border border-frame   hover:bg-frame-hover transition"
-            >
-              <p className="whitespace-pre">{todo.content}</p>
-            </NavLink>
-          ))}
-        </div>
-      )}
+        {todos.length !== 0 && (
+          <div className="grid grid-cols-3 gap-8">
+            {todos.map((todo, index) => (
+              <NavLink
+                key={index}
+                to={`/todos/${todo.id}`}
+                className="p-4 border border-frame   hover:bg-frame-hover transition"
+              >
+                <p className="whitespace-pre">{todo.content}</p>
+              </NavLink>
+            ))}
+          </div>
+        )}
+      </div>
     </main>
   )
 }

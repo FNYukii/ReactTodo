@@ -24,28 +24,24 @@ function CreateScreen() {
 
   return (
     <main>
-      <h1 className="mt-4   text-2xl font-bold">Todoの作成</h1>
+      <div className="mt-4">
+        <h1 className="py-2   text-2xl font-bold">Todoの作成</h1>
+      </div>
 
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         rows={4}
         placeholder={sampleTodo}
-        className="mt-4 w-full min-h-28 p-4 placeholder:text-secoundary   border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent   resize-none field-sizing-content"
+        className="mt-6 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
       <div className="mt-8   flex justify-between">
-        <NavLink
-          to="/"
-          className="px-16 py-3   text-accent border border-accent   hover:bg-button-hover transition"
-        >
+        <NavLink to="/" className="outlined-button">
           戻る
         </NavLink>
 
-        <button
-          disabled={content.length === 0}
-          className="px-16 py-3   text-wall bg-accent disabled:bg-switch-hover   hover:bg-switch-hover transition   not-disabled:cursor-pointer"
-        >
+        <button disabled={content.length === 0} className="filled-button">
           作成
         </button>
       </div>
