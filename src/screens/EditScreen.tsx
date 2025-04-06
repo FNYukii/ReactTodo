@@ -2,44 +2,30 @@ import { useEffect, useState } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { deleteTodo, readTodo, updateTodo } from '../utils/todo'
 import { generateSampleContent } from '../utils/form'
+import Todo from '../types/Todo'
 
-function EditScreen() {
-  document.title = 'Todoの編集 | React Todo'
-
+function EditSection(props: { todo: Todo; className?: string }) {
   const navigate = useNavigate()
-  let { id } = useParams()
 
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState(props.todo.content)
 
   const handleDelete = () => {
-    if (!id) return
-    deleteTodo(id)
+    deleteTodo(props.todo.id)
     navigate('/')
   }
 
   const handleSave = () => {
-    if (!id) return
-    updateTodo(id, content)
+    updateTodo(props.todo.id, content)
     navigate('/')
   }
 
-  useEffect(() => {
-    if (!id) return
-    const todo = readTodo(id)
-    setContent(todo?.content ?? '')
-  }, [])
-
   return (
-    <main>
-      <div className="mt-4">
-        <h1 className="py-2   text-2xl font-bold">Todoの編集</h1>
-      </div>
-
+    <div className={props.className}>
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder={generateSampleContent()}
-        className="mt-6 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
+        className="w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
       <div className="mt-8   flex justify-between">
@@ -61,6 +47,46 @@ function EditScreen() {
           </button>
         </div>
       </div>
+    </div>
+  )
+}
+
+function NotFoundSection(props: { className?: string }) {
+  return (
+    <div className={props.className}>
+      <p className="text-secondary">Todoが見つかりませんでした</p>
+
+      <div className="mt-8   flex justify-between">
+        <NavLink to="/" className="outlined-button">
+          戻る
+        </NavLink>
+      </div>
+    </div>
+  )
+}
+
+function EditScreen() {
+  document.title = 'Todoの編集 | React Todo'
+
+  let { id } = useParams()
+  const [todo, setTodo] = useState<Todo | null>(null)
+
+  useEffect(() => {
+    if (!id) return
+    const todo = readTodo(id)
+    setTodo(todo)
+  }, [])
+
+  return (
+    <main>
+      <div className="mt-4">
+        <h1 className="py-2   text-2xl font-bold">Todoの編集</h1>
+      </div>
+
+      {id === undefined ||
+        (todo === null && <NotFoundSection className="mt-6" />)}
+
+      {id && todo && <EditSection todo={todo} className="mt-6" />}
     </main>
   )
 }
