@@ -8,5 +8,7 @@
   --color-accent: var(--color-sky-500);
 
   --color-frame: var(--color-gray-700);
-  --color-translucent: var(--color-gray-900);
+  --color-frame-hover: var(--color-gray-900);
+  --color-button-hover: var(--color-sky-950);
+  --color-switch-hover: var(--color-sky-700);
 }

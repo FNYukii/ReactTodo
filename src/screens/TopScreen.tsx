@@ -21,11 +21,22 @@ const DUMMY_TODOS: Todo[] = [
 ]
 
 function TopScreen() {
+  document.title = 'React Todo'
+
   const todos = DUMMY_TODOS
 
   return (
     <main>
-      <h1 className="mt-4   text-2xl font-bold">Todos</h1>
+      <div className="mt-4   flex justify-between">
+        <h1 className="text-2xl font-bold">Todos</h1>
+
+        <NavLink
+          to="/new"
+          className="text-accent   -mr-4 rounded-full px-4 py-1 hover:bg-button-hover transition"
+        >
+          新規Todo
+        </NavLink>
+      </div>
 
       {todos.length === 0 && (
         <p className="mt-4 text-secondary">Todoがありません</p>
@@ -37,7 +48,7 @@ function TopScreen() {
             <NavLink
               key={index}
               to={`/todos/${todo.id}`}
-              className="p-4 border border-frame   hover:bg-translucent transition"
+              className="p-4 border border-frame   hover:bg-frame-hover transition"
             >
               <p className="whitespace-pre">{todo.content}</p>
             </NavLink>
