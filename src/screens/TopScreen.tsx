@@ -27,7 +27,7 @@ function TopScreen() {
               <NavLink
                 key={index}
                 to={`/todos/${todo.id}`}
-                className="p-4 border border-frame   hover:bg-frame-hover transition"
+                className="p-4 border border-frame   hover:bg-frame-hover transition   focus:bg-frame-hover outline-none focus:border-primary-"
               >
                 <p className="whitespace-pre">{todo.content}</p>
               </NavLink>
