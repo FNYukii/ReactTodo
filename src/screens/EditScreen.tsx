@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { deleteTodo, readTodo, updateTodo } from '../utils/todo'
 import { generateSampleContent } from '../utils/form'
@@ -60,13 +60,7 @@ function EditScreen() {
   document.title = 'Todoの編集 | React Todo'
 
   let { id } = useParams()
-  const [todo, setTodo] = useState<Todo | null>(null)
-
-  useEffect(() => {
-    if (!id) return
-    const todo = readTodo(id)
-    setTodo(todo)
-  }, [])
+  const todo = id !== undefined ? readTodo(id) : null
 
   return (
     <>
