@@ -7,7 +7,7 @@ import NotFoundScreen from './screens/NotFoundScreen'
 
 function App() {
   return (
-    <div className="container mx-auto sm:px-0 px-4">
+    <div className="container max-w-[1024px]   mx-auto px-4 sm:px-0">
       <BrowserRouter>
         <Header />
         <Routes>
