@@ -11,6 +11,7 @@ function EditScreenContent(props: { todo: Todo }) {
   const [content, setContent] = useState(props.todo.content)
 
   const handleDelete = () => {
+    if (!window.confirm('Todoを削除してもよろしいですか？')) return
     deleteTodo(props.todo.id)
     navigate('/')
   }
