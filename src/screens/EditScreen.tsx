@@ -3,8 +3,9 @@ import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { deleteTodo, readTodo, updateTodo } from '../utils/todo'
 import { generateSampleContent } from '../utils/form'
 import Todo from '../types/Todo'
+import NotFoundScreen from './NotFoundScreen'
 
-function EditSection(props: { todo: Todo; className?: string }) {
+function EditScreenContent(props: { todo: Todo }) {
   const navigate = useNavigate()
 
   const [content, setContent] = useState(props.todo.content)
@@ -20,12 +21,16 @@ function EditSection(props: { todo: Todo; className?: string }) {
   }
 
   return (
-    <div className={props.className}>
+    <main>
+      <div className="mt-4">
+        <h1 className="py-2   text-2xl font-bold">Todoの編集</h1>
+      </div>
+
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder={generateSampleContent()}
-        className="w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
+        className="mt-6   w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
       <div className="mt-8   flex justify-between">
@@ -47,21 +52,7 @@ function EditSection(props: { todo: Todo; className?: string }) {
           </button>
         </div>
       </div>
-    </div>
-  )
-}
-
-function NotFoundSection(props: { className?: string }) {
-  return (
-    <div className={props.className}>
-      <p className="text-secondary">Todoが見つかりませんでした</p>
-
-      <div className="mt-8   flex justify-between">
-        <NavLink to="/" className="outlined-button">
-          戻る
-        </NavLink>
-      </div>
-    </div>
+    </main>
   )
 }
 
@@ -78,16 +69,10 @@ function EditScreen() {
   }, [])
 
   return (
-    <main>
-      <div className="mt-4">
-        <h1 className="py-2   text-2xl font-bold">Todoの編集</h1>
-      </div>
-
-      {id === undefined ||
-        (todo === null && <NotFoundSection className="mt-6" />)}
-
-      {id && todo && <EditSection todo={todo} className="mt-6" />}
-    </main>
+    <>
+      {id === undefined || (todo === null && <NotFoundScreen variant="todo" />)}
+      {id && todo && <EditScreenContent todo={todo} />}
+    </>
   )
 }
 
