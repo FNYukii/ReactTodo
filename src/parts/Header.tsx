@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
-    <header className="py-4">
+    <header className="mt-4">
       <NavLink to="/" className="text-4xl font-light text-accent">
         React Todo
       </NavLink>

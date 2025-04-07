@@ -13,11 +13,11 @@ function NotFoundScreen(props: { variant: Variant }) {
 
   return (
     <main>
-      <div className="mt-4">
-        <h1 className="py-2   text-2xl font-bold">{title}</h1>
+      <div className="mt-8">
+        <h1 className="text-2xl font-bold">{title}</h1>
       </div>
 
-      <p className="mt-4 text-secondary">{message}</p>
+      <p className="mt-8 text-secondary">{message}</p>
 
       <div className="mt-8   flex justify-between">
         <NavLink to="/" className="outlined-button">

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { createTodo } from '../utils/todo'
+import { createTodo } from '../utils/storage'
 import { generateSampleContent } from '../utils/form'
 
 function CreateScreen() {
@@ -17,8 +17,8 @@ function CreateScreen() {
 
   return (
     <main>
-      <div className="mt-4">
-        <h1 className="py-2   text-2xl font-bold">Todoの作成</h1>
+      <div className="mt-8">
+        <h1 className="text-2xl font-bold">Todoの作成</h1>
       </div>
 
       <textarea
@@ -26,7 +26,7 @@ function CreateScreen() {
         onChange={(e) => setContent(e.target.value)}
         placeholder={generateSampleContent()}
         autoFocus
-        className="mt-6 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
+        className="mt-8 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
       <div className="mt-8   flex justify-between">

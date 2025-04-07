@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
-import { deleteTodo, readTodo, updateTodo } from '../utils/todo'
+import { deleteTodo, readTodo, updateTodo } from '../utils/storage'
 import { generateSampleContent } from '../utils/form'
 import Todo from '../types/Todo'
 import NotFoundScreen from './NotFoundScreen'
@@ -22,15 +22,15 @@ function EditScreenContent(props: { todo: Todo }) {
 
   return (
     <main>
-      <div className="mt-4">
-        <h1 className="py-2   text-2xl font-bold">Todoの編集</h1>
+      <div className="mt-8">
+        <h1 className="text-2xl font-bold">Todoの編集</h1>
       </div>
 
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder={generateSampleContent()}
-        className="mt-6   w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
+        className="mt-8   w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
       <div className="mt-8   flex justify-between">

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { readTodos } from '../utils/todo'
+import { readTodos } from '../utils/storage'
 
 function TopScreen() {
   document.title = 'React Todo'
@@ -8,15 +8,15 @@ function TopScreen() {
 
   return (
     <main>
-      <div className="mt-4   flex justify-between items-center">
-        <h1 className="py-2   text-2xl font-bold">Todos</h1>
+      <div className="mt-8   flex justify-between items-center">
+        <h1 className="text-2xl font-bold">Todos</h1>
 
-        <NavLink to="/new" className="outlined-button">
+        <NavLink to="/new" className="outlined-button -my-2">
           新規Todo
         </NavLink>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-8">
         {todos.length === 0 && (
           <p className="text-secondary">Todoがありません</p>
         )}
