@@ -10,7 +10,8 @@
   --color-frame: var(--color-gray-700);
   --color-frame-hover: var(--color-gray-900);
   --color-button-hover: var(--color-sky-950);
-  --color-switch-hover: var(--color-sky-700);
+  --color-switch-hover: var(--color-sky-600);
+  --color-switch-disabled: var(--color-sky-800);
 }
 
 .outlined-button {
@@ -18,5 +19,5 @@
 }
 
 .filled-button {
-  @apply min-w-40 px-8 py-2 text-center   text-wall bg-accent    hover:bg-switch-hover transition   not-disabled:cursor-pointer disabled:bg-switch-hover   outline-none focus:bg-switch-hover;
+  @apply min-w-40 px-8 py-2 text-center   text-wall bg-accent    hover:bg-switch-hover transition   not-disabled:cursor-pointer disabled:bg-switch-disabled   outline-none focus:bg-switch-hover;
 }
