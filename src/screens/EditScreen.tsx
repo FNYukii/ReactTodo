@@ -33,12 +33,12 @@ function EditScreenContent(props: { todo: Todo }) {
         className="mt-8   w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 
-      <div className="mt-8   flex justify-between">
+      <div className="mt-8   flex justify-between   gap-8 items-start">
         <NavLink to="/" className="outlined-button">
           戻る
         </NavLink>
 
-        <div className="flex gap-8">
+        <div className="flex gap-8   flex-wrap justify-end">
           <button onClick={handleDelete} className="outlined-button">
             削除
           </button>

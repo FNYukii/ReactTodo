@@ -15,9 +15,9 @@
 }
 
 .outlined-button {
-  @apply min-w-40 px-8 py-2 text-center   text-accent border border-accent   hover:bg-button-hover transition   cursor-pointer   outline-none focus:bg-button-hover;
+  @apply min-w-36 px-8 py-2 text-center   text-accent border border-accent   hover:bg-button-hover transition   cursor-pointer   outline-none focus:bg-button-hover;
 }
 
 .filled-button {
-  @apply min-w-40 px-8 py-2 text-center   text-wall bg-accent    hover:bg-switch-hover transition   not-disabled:cursor-pointer disabled:bg-switch-disabled   outline-none focus:bg-switch-hover;
+  @apply min-w-36 px-8 py-2 text-center   text-wall bg-accent    hover:bg-switch-hover transition   not-disabled:cursor-pointer disabled:bg-switch-disabled   outline-none focus:bg-switch-hover;
 }
