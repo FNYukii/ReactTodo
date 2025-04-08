@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { deleteTodo, readTodo, updateTodo } from '../utils/storage'
-import { generateSampleContent } from '../utils/form'
+import { generateSampleTodoContent } from '../utils/form'
 import Todo from '../types/Todo'
 import NotFoundScreen from './NotFoundScreen'
 
@@ -30,7 +30,7 @@ function EditScreenContent(props: { todo: Todo }) {
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        placeholder={generateSampleContent()}
+        placeholder={generateSampleTodoContent()}
         className="mt-8   w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />
 

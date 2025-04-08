@@ -2,8 +2,8 @@ import { ulid } from 'ulid'
 import Todo from '../types/Todo'
 
 /**
- * Todo型配列をJSON文字列としてLocalStorageに保存
- * @returns
+ * LocalStorageからJSON文字列を取得し、Todo型配列に変換して返却
+ * @returns {Todo[]} 保存されたTodos
  */
 const getTodos = (): Todo[] => {
   const todosSerialized = localStorage.getItem('todos')
@@ -12,8 +12,8 @@ const getTodos = (): Todo[] => {
 }
 
 /**
- * LocalStorageからJSON文字列を取得し、Todo型配列に変換して返却
- * @param todos
+ * TodosをJSON文字列としてLocalStorageに保存
+ * @param {Todos[]} todos Todoの配列
  */
 const setTodos = (todos: Todo[]) => {
   const todosSerialized = JSON.stringify(todos)
@@ -21,16 +21,17 @@ const setTodos = (todos: Todo[]) => {
 }
 
 /**
- * Todosを読み取り
- * @returns
+ * 保存済みの全てのTodosを読み取る
+ * @returns {Todo[]} 全てのTodos
  */
 export const readTodos = (): Todo[] => {
   return getTodos()
 }
 
 /**
- * 指定したTodoを読み取り
- * @returns
+ * 指定したTodoを1つ読み取る
+ * @param {string} id Todoのid
+ * @returns {Todo} 指定されたTodo
  */
 export const readTodo = (id: string): Todo | null => {
   const todos = getTodos()
@@ -40,7 +41,7 @@ export const readTodo = (id: string): Todo | null => {
 
 /**
  * 新規Todoを追加
- * @param content
+ * @param {string} content Todoのcontent
  */
 export const createTodo = (content: string) => {
   const newTodo: Todo = {
@@ -54,8 +55,8 @@ export const createTodo = (content: string) => {
 
 /**
  * 既存Todoのcontentを更新
- * @param id
- * @param content
+ * @param {string} id 更新したいTodoのid
+ * @param {string} content 新しいcontent
  */
 export const updateTodo = (id: string, content: string) => {
   const todos = getTodos()
@@ -66,7 +67,7 @@ export const updateTodo = (id: string, content: string) => {
 
 /**
  * 既存Todoを削除
- * @param id
+ * @param {string} id 削除したいTodoのid
  */
 export const deleteTodo = (id: string) => {
   const todos = getTodos()

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { createTodo } from '../utils/storage'
-import { generateSampleContent } from '../utils/form'
+import { generateSampleTodoContent } from '../utils/form'
 
 function CreateScreen() {
   document.title = 'Todoの作成 | React Todo'
@@ -24,7 +24,7 @@ function CreateScreen() {
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        placeholder={generateSampleContent()}
+        placeholder={generateSampleTodoContent()}
         autoFocus
         className="mt-8 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
       />

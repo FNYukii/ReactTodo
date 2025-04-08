@@ -1,4 +1,4 @@
-const SAMPLE_TODOS = [
+const SAMPLE_TODO_CONTENTS = [
   '買い物',
   '洗濯',
   '部屋を掃除する',
@@ -11,7 +11,11 @@ const SAMPLE_TODOS = [
   '新しい趣味を見つける',
 ]
 
-export const generateSampleContent = (): string => {
-  const rand = Math.floor(Math.random() * SAMPLE_TODOS.length)
-  return SAMPLE_TODOS[rand]
+/**
+ * Todoのサンプルを生成する
+ * @returns {string}　Todoのcontentのサンプル
+ */
+export const generateSampleTodoContent = (): string => {
+  const rand = Math.floor(Math.random() * SAMPLE_TODO_CONTENTS.length)
+  return SAMPLE_TODO_CONTENTS[rand]
 }
