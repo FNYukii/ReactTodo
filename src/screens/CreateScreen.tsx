@@ -26,7 +26,7 @@ function CreateScreen() {
         onChange={(e) => setContent(e.target.value)}
         placeholder={generateSampleTodoContent()}
         autoFocus
-        className="mt-8 w-full min-h-28 p-4     border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent    placeholder:text-secoundary   resize-none field-sizing-content"
+        className="mt-8 outlined-textarea"
       />
 
       <div className="mt-8   flex justify-between">
