@@ -15,13 +15,13 @@
 }
 
 .outlined-button {
-  @apply min-w-36 px-8 py-2 text-center   text-accent border border-accent   hover:bg-button-hover transition   cursor-pointer   outline-none focus:bg-button-hover;
+  @apply min-w-36 px-8 py-2 text-center   text-accent border border-accent   hover:bg-button-hover transition   cursor-pointer   outline-none focus:bg-button-hover   active:bg-button-hover;
 }
 
 .filled-button {
-  @apply min-w-36 px-8 py-2 text-center   text-wall bg-accent   hover:bg-switch-hover transition   not-disabled:cursor-pointer disabled:bg-switch-disabled   outline-none focus:bg-switch-hover;
+  @apply min-w-36 px-8 py-2 text-center   text-wall bg-accent   hover:bg-switch-hover transition   not-disabled:cursor-pointer disabled:bg-switch-disabled   outline-none focus:bg-switch-hover   active:bg-switch-hover;
 }
 
 .outlined-textarea {
-  @apply w-full min-h-28 p-4   border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent   placeholder:text-secondary   resize-none field-sizing-content   hover:not-focus:cursor-pointer;
+  @apply w-full min-h-28 p-4   border border-frame   hover:not-focus:bg-frame-hover transition   outline-none focus:border-accent   placeholder:text-secondary   resize-none field-sizing-content   hover:not-focus:cursor-pointer   active:not-focus:bg-frame-hover;
 }
