@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 type Variant = 'page' | 'todo'
 
 function NotFoundScreen(props: { variant: Variant }) {
-  document.title = 'Not Found | React Todo'
+  document.title = 'Not Found - React Todo'
 
   const title = props.variant === 'page' ? 'Page not found' : 'Todo not found'
   const message =

@@ -4,7 +4,7 @@ import { createTodo } from '../utils/storage'
 import { generateSampleTodoContent } from '../utils/form'
 
 function CreateScreen() {
-  document.title = 'Todoの作成 | React Todo'
+  document.title = 'Todoの作成 - React Todo'
 
   const navigate = useNavigate()
 

@@ -58,7 +58,7 @@ function EditScreenContent(props: { todo: Todo }) {
 }
 
 function EditScreen() {
-  document.title = 'Todoの編集 | React Todo'
+  document.title = 'Todoの編集 - React Todo'
 
   let { id } = useParams()
   const todo = id !== undefined ? readTodo(id) : null
