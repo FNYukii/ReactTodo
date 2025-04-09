@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { createTodo } from '../utils/storage'
-import { generateSampleTodoContent } from '../utils/form'
+import Textarea from '../parts/Textarea'
 
 function CreateScreen() {
   document.title = 'Todoの作成 - React Todo'
@@ -21,12 +21,11 @@ function CreateScreen() {
         <h1 className="text-2xl font-bold">Todoの作成</h1>
       </div>
 
-      <textarea
+      <Textarea
         value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder={generateSampleTodoContent()}
+        onChange={(value) => setContent(value)}
         autoFocus
-        className="mt-8 outlined-textarea"
+        className="mt-8"
       />
 
       <div className="mt-8   flex justify-between">

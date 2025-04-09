@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { deleteTodo, readTodo, updateTodo } from '../utils/storage'
-import { generateSampleTodoContent } from '../utils/form'
 import Todo from '../types/Todo'
 import NotFoundScreen from './NotFoundScreen'
+import Textarea from '../parts/Textarea'
 
 function EditScreenContent(props: { todo: Todo }) {
   const navigate = useNavigate()
@@ -27,11 +27,10 @@ function EditScreenContent(props: { todo: Todo }) {
         <h1 className="text-2xl font-bold">Todoの編集</h1>
       </div>
 
-      <textarea
+      <Textarea
         value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder={generateSampleTodoContent()}
-        className="mt-8 outlined-textarea"
+        onChange={(value) => setContent(value)}
+        className="mt-8"
       />
 
       <div className="mt-8   flex justify-between   gap-8 items-start">
