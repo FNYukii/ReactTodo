@@ -16,13 +16,13 @@
 }
 
 .outlined-button {
-  @apply min-w-36 px-8 py-2 text-center   text-accent border border-accent   hover:bg-accent-pale transition   cursor-pointer   outline-none focus:bg-accent-pale   active:bg-accent-pale;
+  @apply min-w-36 px-8 py-2 text-center   text-accent border border-accent   transition cursor-pointer outline-none   hover:bg-accent-pale focus:bg-accent-pale active:bg-accent-pale;
 }
 
 .filled-button {
-  @apply min-w-36 px-8 py-2 text-center   text-wall bg-accent   hover:bg-accent-weak transition   not-disabled:cursor-pointer disabled:bg-accent-light   outline-none focus:bg-accent-weak   active:bg-accent-weak;
+  @apply min-w-36 px-8 py-2 text-center   text-wall bg-accent   transition outline-none not-disabled:cursor-pointer   hover:bg-accent-weak focus:bg-accent-weak active:bg-accent-weak disabled:bg-accent-light;
 }
 
 .outlined-textarea {
-  @apply w-full min-h-28 p-4   border border-iron   hover:not-focus:bg-iron-pale transition   outline-none focus:border-accent   placeholder:text-secondary   resize-none field-sizing-content   hover:not-focus:cursor-pointer   active:not-focus:bg-iron-pale;
+  @apply w-full min-h-28 p-4   border border-iron   transition outline-none resize-none field-sizing-content hover:not-focus:cursor-pointer   placeholder:text-secondary hover:not-focus:bg-iron-pale focus:border-accent active:not-focus:bg-iron-pale;
 }
