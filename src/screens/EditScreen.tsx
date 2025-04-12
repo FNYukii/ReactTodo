@@ -2,10 +2,27 @@ import { useState } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { deleteTodo, readTodo, updateTodo } from '../utils/storage'
 import Todo from '../types/Todo'
-import NotFoundScreen from './NotFoundScreen'
 import Textarea from '../parts/Textarea'
 
-function EditScreenContent(props: { todo: Todo }) {
+function NotFoundSection() {
+  return (
+    <main>
+      <div className="mt-8">
+        <h1 className="text-2xl font-bold">Todo not found</h1>
+      </div>
+
+      <p className="mt-8 text-secondary">Todoが見つかりませんでした</p>
+
+      <div className="mt-8   flex justify-between">
+        <NavLink to="/" className="outlined-button">
+          戻る
+        </NavLink>
+      </div>
+    </main>
+  )
+}
+
+function EditSection(props: { todo: Todo }) {
   const navigate = useNavigate()
 
   const [content, setContent] = useState(props.todo.content)
@@ -64,8 +81,8 @@ function EditScreen() {
 
   return (
     <>
-      {id === undefined || (todo === null && <NotFoundScreen variant="todo" />)}
-      {id && todo && <EditScreenContent todo={todo} />}
+      {id === undefined || (todo === null && <NotFoundSection />)}
+      {id && todo && <EditSection todo={todo} />}
     </>
   )
 }
