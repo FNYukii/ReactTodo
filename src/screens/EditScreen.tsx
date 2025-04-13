@@ -4,7 +4,7 @@ import { deleteTodo, readTodo, updateTodo } from '../utils/storage'
 import Todo from '../types/Todo'
 import { generateSampleTodoContent } from '../utils/form'
 
-function NotFoundSection() {
+function EditScreenTodoNotExists() {
   return (
     <main>
       <div className="mt-8">
@@ -22,7 +22,7 @@ function NotFoundSection() {
   )
 }
 
-function EditSection(props: { todo: Todo }) {
+function EditScreenTodoExists(props: { todo: Todo }) {
   const navigate = useNavigate()
 
   const [content, setContent] = useState(props.todo.content)
@@ -83,8 +83,8 @@ function EditScreen() {
 
   return (
     <>
-      {id === undefined || (todo === null && <NotFoundSection />)}
-      {id && todo && <EditSection todo={todo} />}
+      {id === undefined || (todo === null && <EditScreenTodoNotExists />)}
+      {id && todo && <EditScreenTodoExists todo={todo} />}
     </>
   )
 }
