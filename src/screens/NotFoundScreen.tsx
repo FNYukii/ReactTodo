@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 function NotFoundScreen() {
-  document.title = '404 - React Todo'
+  document.title = 'Not found - React Todo'
 
   return (
     <main>

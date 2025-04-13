@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<TopScreen />} />
           <Route path="/new" element={<CreateScreen />} />
           <Route path="/todos/:id" element={<EditScreen />} />
-          <Route path="*" element={<NotFoundScreen variant="page" />} />
+          <Route path="*" element={<NotFoundScreen />} />
         </Routes>
       </BrowserRouter>
     </div>
