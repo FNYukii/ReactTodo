@@ -36,7 +36,7 @@ function CreateScreen() {
 
         <button
           onClick={handleCreate}
-          disabled={content.length === 0}
+          disabled={content.length === 0 || content.trim() === ''}
           className="filled-button"
         >
           作成

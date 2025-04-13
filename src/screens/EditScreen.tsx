@@ -64,7 +64,7 @@ function EditScreenTodoExists(props: { todo: Todo }) {
 
           <button
             onClick={handleSave}
-            disabled={content.length === 0}
+            disabled={content.length === 0 || content.trim() === ''}
             className="filled-button"
           >
             保存
