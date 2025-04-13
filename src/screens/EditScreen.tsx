@@ -48,7 +48,6 @@ function EditScreenTodoExists(props: { todo: Todo }) {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder={generateSampleTodoContent()}
-        autoFocus
         className="mt-8 outlined-textarea"
       />
 
