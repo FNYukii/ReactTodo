@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-wall: var(--color-gray-950);
+  --color-coal: var(--color-gray-950);
 
   --color-primary: var(--color-white);
   --color-secondary: var(--color-gray-500);
-  --color-accent: var(--color-sky-500);
 
+  --color-accent: var(--color-sky-500);
   --color-accent-weak: var(--color-sky-700);
   --color-accent-light: var(--color-sky-800);
   --color-accent-pale: var(--color-sky-950);
@@ -27,7 +27,7 @@
   @apply min-w-36 px-8 py-2 
 	text-center transition outline-none
 	not-disabled:cursor-pointer
-	text-wall bg-accent
+	text-coal bg-accent
 	hover:bg-accent-weak focus:bg-accent-weak active:bg-accent-weak disabled:bg-accent-light;
 }
 
