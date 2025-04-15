@@ -7,7 +7,7 @@
   --color-secondary: var(--color-gray-500);
   --color-accent: var(--color-sky-500);
 
-  --color-accent-weak: var(--color-sky-600);
+  --color-accent-weak: var(--color-sky-700);
   --color-accent-light: var(--color-sky-800);
   --color-accent-pale: var(--color-sky-950);
 
@@ -16,13 +16,26 @@
 }
 
 .outlined-button {
-  @apply min-w-36 px-8 py-2 text-center   text-accent border border-accent   transition cursor-pointer outline-none   hover:bg-accent-pale focus:bg-accent-pale active:bg-accent-pale;
+  @apply min-w-36 px-8 py-2   
+	text-center border 
+	transition outline-none cursor-pointer
+	text-accent border-accent
+	hover:bg-accent-pale focus:bg-accent-pale active:bg-accent-pale;
 }
 
 .filled-button {
-  @apply min-w-36 px-8 py-2 text-center   text-wall bg-accent   transition outline-none not-disabled:cursor-pointer   hover:bg-accent-weak focus:bg-accent-weak active:bg-accent-weak disabled:bg-accent-light;
+  @apply min-w-36 px-8 py-2 
+	text-center transition outline-none
+	not-disabled:cursor-pointer
+	text-wall bg-accent
+	hover:bg-accent-weak focus:bg-accent-weak active:bg-accent-weak disabled:bg-accent-light;
 }
 
 .outlined-textarea {
-  @apply w-full min-h-28 p-4   border border-iron   transition outline-none resize-none field-sizing-content hover:not-focus:cursor-pointer   placeholder:text-secondary hover:not-focus:bg-iron-pale focus:border-accent active:not-focus:bg-iron-pale;
+  @apply w-full min-h-28 p-4   
+	border
+	transition outline-none resize-none field-sizing-content 
+	hover:not-focus:cursor-pointer   
+	border-iron placeholder:text-secondary
+	hover:not-focus:bg-iron-pale focus:border-accent active:not-focus:bg-iron-pale;
 }
