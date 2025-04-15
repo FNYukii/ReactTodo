@@ -5,7 +5,7 @@ function Header() {
     <header className="mt-4">
       <NavLink
         to="/"
-        className="text-4xl font-light text-accent   py-1 px-4 -my-1 -mx-4 border border-transparent   outline-none focus-visible:border focus-visible:border-accent focus-visible:bg-button-hover"
+        className="text-4xl font-light text-accent   py-1 px-4 -my-1 -mx-4   focus-visible:outline-solid focus-visible:outline-accent"
       >
         React Todo
       </NavLink>
