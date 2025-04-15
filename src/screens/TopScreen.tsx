@@ -18,7 +18,7 @@ function TopScreen() {
 
       <div className="mt-8">
         {todos.length === 0 && (
-          <p className="text-secondary">Todoがありません</p>
+          <p className="text-secondary">まだTodoがありません</p>
         )}
 
         {todos.length !== 0 && (
